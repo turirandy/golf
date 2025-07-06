@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GirlsGolf-Break Par,Break Barriers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gooleapis.com"/> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&family=Pacifico&display=swap" 
+    rel="stylesheet"
+    />
+    <link 
+    rel="stylesheet" 
+    href=""/>
+    <script src=""></script>
+</head>
+<body>
+    <header> 
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="ri-golf-line"></i>
+                <span>GirlsGolf</span>
+                </a>
+          <button class="mobile-menu-btn"id="mobile-menu-Btn">
+            <i class="ri-menu-line"></i>
+          </button>      
+          <ul class="nav-menu" id="navMenu">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#tracker" class="nav-link">Track Golf</a></li>
+            <li class="nav-item"><a href="#weather" class="nav-link">Weather</a></li>
+            <li class="nav-item"><a href="#Stories" class="nav-link">Success Stories</a></li>
+            <li class="nav-item"><a href="#Join" class="nav-link">Join Us</a></li>
+            <li class="nav-item"><a href="#"class="btn btn-primary">Start Golfing</a></li>
+
+          </ul>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Break Par, Break Barriers</h1>
+                <p>Join the growing community of women transforming the game of golf.</p>
+                    <P>Track your progress,plan your perfect game day and connect with inspiring female golfers around the world. </p>
+                <div class="hero-btns">
+                    <a href="#tracker" class="btn btn-primary">Track your Progress</a>
+                    <a href="#weather" class="btn btn-secondary">Check Weather</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section"id="tracker">
+        <div class="container">
+            <h2 class="section title">Golf ball Tracker</h2>
+            <div class="tracker-container">
+                <div class="tracker-chart" id="trackerChart"></div>
+                <div class="tracker-form">
+                    <h3>Record Your Shot</h3>
+                    <form id="shotForm">
+                    <div class="form-group">
+                        <label for="shotDate" class="form-label">Date</label>
+                        <input type="date" id="shotDate" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="shotDistance" class="form-label">Distance(yards)</label>
+                        <input type="number" id="shotDistance" class="form-input" min="1" max="400" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="shotAccuracy" class="form-label">Accuracy(1-10)</label>
+                        <input type="range"id="shotAccuracy"class="form-input"min="1"max="10" step="1" value="5">
+                        <div id="accuracyValue" style="text-align: center;margin-top: 0.5rem;">5</div>    
+                    </div>
+                    <div class="form-group">
+                        <label for="shotClub" class="form-label">Club Used</label>
+                        <select id="shotClub" class="form-input">
+                            <option value="driver">Driver</option>
+                            <option value="3 wood">3 Wood</option>
+                            <option value="5 wood">5 Wood</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="iron">Iron</option>
+                            <option value="wedge">Wedge</option>
+                            <option value="putter">Putter</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="shotNotes" class="form-label">Notes</label>
+                        <textarea id="shotNotes" id="shotNotes" class="form-input" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Save Shot Data</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+ </section>
+   <section class="section weather-section" id="weather">
+    <div class="container">
+        <h2 class="section-title">Golf Weather Forecast</h2>
+        <div class="weather-container">
+            <div class="current-weather">
+                <div class="weather-info">
+                    <h3 id="currentTemp">72 F</h3>
+                    <p id="currentLocation">San Francisco,CA</p>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <i class="ri-windy-line"></i>
+                            <span id="currentWind">8 mph</span>
+                        </div>
+                        <div class="weather-detail">
+                            <i class="ri-drop-line"></i>
+                            <span id="currentHumidity">45%</span>
+                        </div>
+                        <div class="weather-detail">
+                            <i class="ri-umbrella-line"></i>
+                            <span id="currentPrecip">5%</span>
+                        </div>                  
+                    </div>
+                </div>
+                <div class="weather-icon">
+                    <i class="ri-sun-line"></i>
+                </div>
+            </div>
+            <div class="forecast" id="forecast">
+            </div>
+            <div style="margin-top: 2rem;text-align: center;"></div>
+            <h3 style="margin-bottom: 1rem;">Best Time to Golf This Week</h3>
+            <div style="background-color:var(--accent);padding: 1rem;border-radius: 8px;display: inline-block;">
+                <p style="font-weight: 600;margin: 0;"><i class="ri-calender-check-line" style="margin-right: 0.5rem;"></i><span id="bestDay">Friday,July 5</span>at <span id="bestTime">10:00AM</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+    <section class="section" id="stories">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="stories-container">
+                <div class="stories-carousel" id="storiesCarousel">
+                    <div class="story-card">
+                        <div class="story-image">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%20female%20golfer%20in%20action%2C%20confident%20pose%2C%20modern%20golf%20attire%2C%20determined%20expression%2C%20professional%20sports%20portrait%2C%20high%20quality%20photography%2C%20golf%20course%20background%2C%20natural%20lighting%2C%20inspiring%20athlete&width=300&height=300&seq=2&orientation=portrait&quot" alt="Emily Chen">
+                        </div>
+                        <div class="story-content">
+                            <h3>Emily Chen</h3>
+                            <p class="story-quote">Golf taught me that persistance and precision are just as important as power.I'm proud to be part of a growing community of women changing the face of this sport.</p>
+                            <div class="story-bio">
+                                <p><strong>Started at age:</strong>12</p>
+                                <p>Emily began golfing after watching her father every weekend.Intially one of the only girls at her local club,she now mentors young female golfers and advocates for gender equality in sports.</p>
+                            </div>
+                        <div class="story-social">
+                            <a href="#" class="social-link"><i class="ri-instagram-line"></i></a>
+                            <a href="#" class="social-link"><i class="ri-twitter-x-line"></i></a>
+                            <a href="#" class="social-link"><i class="ri-facebook-line"></i></a>
+                        </div>  
+                        </div>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-image">
+                            <img src="https://readdy.ai/api/search-image?query=African%20American%20female%20golfer%2C%20professional%20stance%2C%20elegant%20golf%20attire%2C%20confident%20smile%2C%20golf%20course%20background%2C%20inspiring%20athlete%20portrait%2C%20natural%20lighting%2C%20high%20quality%20sports%20photography&width=300&height=300&seq=3&orientation=portrait&quot;" alt="Jasmine Williams">
+                            <div class="story-content">
+                                <h3>Jasmine Williams</h3>
+                                <p class="story-quote">I never saw many people who looked like me on the golf course growing up.Now I'm showing girls of all backgrounds that they belong in the sport too.</p>
+                                <div class="story-bio">
+                                    <p> <strong>Achievements:</strong>U.S. Womens Open participant,Collage All-American</p>
+                                    <p> <strong>Started at age:</strong>15</p>
+                                    <P>Jasmine discoverd gof through a community outreach program in her neighborhood. Despite starting later than many of her competitors,her natural talent and dedication helped her earn a collage scholarship and eventually compete professionally.</P>
+                                </div>
+                                <div class="story-social">
+                                    <a href="#" class="social-link"><i class="ri-instagram-line"></i></a>
+                                    <a href="#" class="social-link"><i class="ri-twitter-x-line"></i></a>
+                                    <a href="#" class="social-link"><i class="ri-youtube-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-image">
+                                <img src="https://readdy.ai/api/search-image?query=Senior%20female%20golfer%2C%20elegant%20mature%20woman%20in%20golf%20attire%2C%20confident%20pose%2C%20silver%20hair%2C%20experienced%20athlete%2C%20golf%20course%20background%2C%20inspiring%20portrait%2C%20natural%20lighting%2C%20high%20quality%20sports%20photography&width=300&height=300&seq=4&orientation=portrait&quot;" alt="Margaret Foster">
+                        </div>
+                        <div class="story-content">
+                            <h3>Margaret Foster</h3>
+                            <p class="story-quote">I took up golf at 50 when most people thought i was too old to learn.Now at 68,I've won senior tournaments and shown that it's never too late to pursue your passion.</p>
+                            <div class="story-bio">
+                            <p><strong>Achievements:</strong>Senior Women's Amateur Champion,Club Champion</p>
+                            <p><strong>Started at age:</strong>50</p>
+                            <p>Margaret always wanted to play golf but spent her younger years focused on her career and family.After retirement,she finally took lessons and quickly fell in love with the sport.She now runs a program encouraging older women to try golf.</p>
+                            </div>
+                            <div class="story-social">
+                                <a href="#" class="social-link"><i class="ri-instagram-line"></i></a>
+                                <a href="#" class="social-link"><i class="ri-linkedin-line"></i></a>
+                                <a href="#" class="social-link"><i class="ri-facebook-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn"><i class="ri-arrow-left-s-line"></i></button>
+                    <button class="carousel-btn" id="nextBtn"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section join-section" id="join">
+        <div class="container">
+            <div class="join-container">
+                <div class="join-content">
+                    <h2>Join Our Community</h2>
+                    <p>Connect with other female golfers,track your progress,and get exclusive access to events and resources designed specifically for women in golf</p>
+                    <ul class="benefits-list">
+                        <li class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="ri-group-line"></i>
+                            </div>
+                            <div>
+                                <h4>Supportive Community</h4>
+                                <p>Connect with with other women who share your passion with golf</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="ri-calender-event-line"></i>
+                            </div>
+                            <div>
+                                <h4>Exclusive Events</h4>
+                                <p>Access to women-only tournaments and social gatherings</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="ri-user-star-line"></i>
+                            </div>
+                            <div>
+                                <h4>Mentership Program</h4>
+                                <p>Learn from experienced female golfers and coaches</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="ri-tools-line"></i>
+                            </div>
+                            <div>
+                                <h4>Advanced Traking Tools</h4>
+                                <p>Premium features for our ball tracking and weather tools</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="join-form">
+                    <h3>Sign Up Today</h3>
+                    <form id="joinForm">
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" id="fullName" class="form-input"required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" id="location" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience" class="form-label">Golf Experience</label>
+                            <select id="experience" class="form-input">
+                                <option value="beginner">Beginner(Less than 1 year)</option>
+                                <option value="intermediate">Intermediate(1-5years)</option>
+                                <option value="advanced">Advanced(5+years)</option>
+                                <option value="none">Never played but interested</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Interests(Select all that apply)</label>
+                            <div style="display: flex;flex-wrap: wrap;gap: 1rem;margin-top: 0.5rem;">
+                                <label style="display: flex;align-items: center;gap: 0.5em;">
+                                    <input type="checkbox" name="Interests" value="lessons">
+                                    <span>Lessons</span>
+                                </label>
+                                <label style="display: flex;align-items:center;gap: 0.5rem;">
+                                    <input type="checkbox" name="interests" value="tournaments">
+                                    <span>Tournaments</span>
+                                </label>
+                                 <label style="display: flex;align-items:center;gap: 0.5rem;">
+                                    <input type="checkbox" name="interests" value="social">
+                                    <span>Social Events</span>
+                                </label>
+                                 <label style="display: flex;align-items:center;gap: 0.5rem;">
+                                    <input type="checkbox" name="interests" value="mentoring">
+                                    <span>Mentoring</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Join Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container footer-container">
+            <div>
+                <a href="#" class="logo footer-logo">
+                    <i class="ri-golf-line"></i>
+                    <span>GirlsGolf</span>
+                </a>
+                <p>Empowering women and girls through the game of golf.Trck,improve,connect and inspire.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="ri-instagram-line"></i></a>
+                    <a href="#" class="social-link"><i class="ri-facebook-line"></i></a>
+                    <a href="#" class="social-link"><i class="ri-twitter-x-line"></i></a>
+                    <a href="#" class="social-link"><i class="ri-youtube-line"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="#">Home</a></li>
+                    <li class="footer-link"><a href="#tracker">Ball Tracker</a></li>
+                    <li class="footer-link"><a href="#weather">Weather</a></li>
+                    <li class="footer-link"><a href="#stories">Success Stories</a></li>
+                    <li class="footer-link"><a href="#join">Join Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Resources</h4>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="#">Beginner's Guide</a></li>
+                    <li class="footer-link"><a href="#">Equipment Reviews</a></li>
+                    <li class="footer-link"><a href="#">Course Directory</a></li>
+                    <li class="footer-link"><a href="#">Training Videos</a></li>
+                    <li class="footer-link"><a href="#">Golf Rules</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Newsletter</h4>
+                <p>Subscribe to get updates on events,tips and success stories.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input"required>
+                    <button type="submit" class="newsletter-btn">
+                        <i class="ri-send-plane-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy;2025 GirlsGolf. All rights reserved.|<a href="#" style="color:#aaa;">Privacy Policy</a>|<a href="#" style="color: #aaa;">Terms of service</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
