@@ -1,0 +1,16 @@
+.nav{
+    background-color: #581f37;
+}
+#nav{
+    display: flex;
+
+}
+li a{
+    text-decoration: none;
+    color: white;
+}
+.header{
+    background:url();
+    height: 500px;
+    background-size: cover;
+}
