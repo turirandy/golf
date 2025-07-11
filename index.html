@@ -15,7 +15,7 @@
     rel="stylesheet" 
  href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"/>
  <script
-     src="ttps://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+     src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
 </head>
 <body>
     <header> 
@@ -31,8 +31,8 @@
             <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="#tracker" class="nav-link">Track Golf</a></li>
             <li class="nav-item"><a href="#weather" class="nav-link">Weather</a></li>
-            <li class="nav-item"><a href="#Stories" class="nav-link">Success Stories</a></li>
-            <li class="nav-item"><a href="#Join" class="nav-link">Join Us</a></li>
+            <li class="nav-item"><a href="#stories" class="nav-link">Success Stories</a></li>
+            <li class="nav-item"><a href="#join" class="nav-link">Join Us</a></li>
             <li class="nav-item"><a href="#"class="btn btn-primary">Start Golfing</a></li>
 
           </ul>
@@ -240,7 +240,7 @@
                                 <i class="ri-tools-line"></i>
                             </div>
                             <div>
-                                <h4>Advanced Traking Tools</h4>
+                                <h4>Advanced Tracking Tools</h4>
                                 <p>Premium features for our ball tracking and weather tools</p>
                             </div>
                         </li>
@@ -264,7 +264,7 @@
                         <div class="form-group">
                             <label for="experience" class="form-label">Golf Experience</label>
                             <select id="experience" class="form-input">
-                                <option value="beginner">Beginner(Less than 1 year)</option>
+                                <option value="beginner">Begginner(Less than 1 year)</option>
                                 <option value="intermediate">Intermediate(1-5years)</option>
                                 <option value="advanced">Advanced(5+years)</option>
                                 <option value="none">Never played but interested</option>
@@ -349,424 +349,16 @@
             </div>
         </div>
     </footer>
-    <script id="mobileMenuScript">
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const navMenu = document.getElementById("navMenu");
-
-        mobileMenuBtn.addEventListener("click", function () {
-          navMenu.classList.toggle("active");
-
-          if (navMenu.classList.contains("active")) {
-            mobileMenuBtn.innerHTML = '<i class="ri-close-line"></i>';
-          } else {
-            mobileMenuBtn.innerHTML = '<i class="ri-menu-line"></i>';
-          }
-        });
-
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll(".nav-link, .nav-menu .btn");
-        navLinks.forEach((link) => {
-          link.addEventListener("click", function () {
-            navMenu.classList.remove("active");
-            mobileMenuBtn.innerHTML = '<i class="ri-menu-line"></i>';
-          });
-        });
-      });
-    </script>
-
-    <script id="trackerChartScript">
-      document.addEventListener("DOMContentLoaded", function () {
-        // Initialize the chart
-        const chartDom = document.getElementById("trackerChart");
-        const myChart = echarts.init(chartDom);
-
-        // Sample data
-        const dates = [
-          "Jun 25",
-          "Jun 26",
-          "Jun 27",
-          "Jun 28",
-          "Jun 29",
-          "Jun 30",
-          "Jul 1",
-        ];
-        const distances = [180, 185, 178, 195, 190, 205, 210];
-        const accuracies = [6, 5, 7, 6, 8, 7, 9];
-
-        const option = {
-          animation: false,
-          title: {
-            text: "Your Progress",
-            left: "center",
-            textStyle: {
-              color: "#333333",
-            },
-          },
-          tooltip: {
-            trigger: "axis",
-            backgroundColor: "rgba(255, 255, 255, 0.8)",
-            borderColor: "#ccc",
-            textStyle: {
-              color: "#333",
-            },
-          },
-          legend: {
-            data: ["Distance (yards)", "Accuracy (1-10)"],
-            bottom: "0%",
-          },
-          grid: {
-            left: "3%",
-            right: "4%",
-            bottom: "15%",
-            top: "15%",
-            containLabel: true,
-          },
-          xAxis: {
-            type: "category",
-            data: dates,
-            axisLine: {
-              lineStyle: {
-                color: "#999",
-              },
-            },
-          },
-          yAxis: [
-            {
-              type: "value",
-              name: "Distance",
-              min: 0,
-              max: 300,
-              axisLine: {
-                lineStyle: {
-                  color: "#999",
-                },
-              },
-              splitLine: {
-                lineStyle: {
-                  type: "dashed",
-                  color: "#eee",
-                },
-              },
-            },
-            {
-              type: "value",
-              name: "Accuracy",
-              min: 0,
-              max: 10,
-              axisLine: {
-                lineStyle: {
-                  color: "#999",
-                },
-              },
-              splitLine: {
-                show: false,
-              },
-            },
-          ],
-          series: [
-            {
-              name: "Distance (yards)",
-              type: "line",
-              data: distances,
-              smooth: true,
-              symbol: "none",
-              lineStyle: {
-                width: 3,
-              },
-              itemStyle: {
-                color: "rgba(87, 181, 231, 1)",
-              },
-              areaStyle: {
-                color: {
-                  type: "linear",
-                  x: 0,
-                  y: 0,
-                  x2: 0,
-                  y2: 1,
-                  colorStops: [
-                    {
-                      offset: 0,
-                      color: "rgba(87, 181, 231, 0.3)",
-                    },
-                    {
-                      offset: 1,
-                      color: "rgba(87, 181, 231, 0.1)",
-                    },
-                  ],
-                },
-              },
-            },
-            {
-              name: "Accuracy (1-10)",
-              type: "line",
-              yAxisIndex: 1,
-              data: accuracies,
-              smooth: true,
-              symbol: "none",
-              lineStyle: {
-                width: 3,
-              },
-              itemStyle: {
-                color: "rgba(252, 141, 98, 1)",
-              },
-            },
-          ],
-        };
-
-        myChart.setOption(option);
-
-        // Handle window resize
-        window.addEventListener("resize", function () {
-          myChart.resize();
-        });
-
-        // Handle form submission
-        const shotForm = document.getElementById("shotForm");
-        const accuracySlider = document.getElementById("shotAccuracy");
-        const accuracyValue = document.getElementById("accuracyValue");
-
-        // Update accuracy value display
-        accuracySlider.addEventListener("input", function () {
-          accuracyValue.textContent = this.value;
-        });
-
-        shotForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const date = new Date(document.getElementById("shotDate").value);
-          const formattedDate = `${date.toLocaleString("default", { month: "short" })} ${date.getDate()}`;
-          const distance = parseInt(document.getElementById("shotDistance").value);
-          const accuracy = parseInt(document.getElementById("shotAccuracy").value);
-
-          // Add new data to chart
-          dates.push(formattedDate);
-          distances.push(distance);
-          accuracies.push(accuracy);
-
-          // Remove oldest data if more than 7 points
-          if (dates.length > 7) {
-            dates.shift();
-            distances.shift();
-            accuracies.shift();
-          }
-
-          // Update chart
-          myChart.setOption({
-            xAxis: {
-              data: dates,
-            },
-            series: [
-              {
-                data: distances,
-              },
-              {
-                data: accuracies,
-              },
-            ],
-          });
-
-          // Reset form
-          shotForm.reset();
-          accuracyValue.textContent = "5";
-
-          // Show success message
-          alert("Shot data saved successfully!");
-        });
-      });
-    </script>
-
-    <script id="weatherScript">
-      document.addEventListener("DOMContentLoaded", function () {
-        // Weather data (would normally come from an API)
-        const weatherData = {
-          current: {
-            temp: 72,
-            location: "San Francisco, CA",
-            wind: "8 mph",
-            humidity: "45%",
-            precipitation: "5%",
-            condition: "sunny",
-          },
-          forecast: [
-            {
-              day: "Wed",
-              date: "Jul 2",
-              temp: 73,
-              condition: "sunny",
-              wind: 7,
-              precipitation: 0,
-              optimal: false,
-            },
-            {
-              day: "Thu",
-              date: "Jul 3",
-              temp: 75,
-              condition: "partly-cloudy",
-              wind: 5,
-              precipitation: 10,
-              optimal: false,
-            },
-            {
-              day: "Fri",
-              date: "Jul 4",
-              temp: 78,
-              condition: "sunny",
-              wind: 3,
-              precipitation: 0,
-              optimal: true,
-            },
-            {
-              day: "Sat",
-              date: "Jul 5",
-              temp: 77,
-              condition: "sunny",
-              wind: 4,
-              precipitation: 0,
-              optimal: true,
-            },
-            {
-              day: "Sun",
-              date: "Jul 6",
-              temp: 74,
-              condition: "cloudy",
-              wind: 8,
-              precipitation: 20,
-              optimal: false,
-            },
-            {
-              day: "Mon",
-              date: "Jul 7",
-              temp: 70,
-              condition: "rainy",
-              wind: 10,
-              precipitation: 60,
-              optimal: false,
-            },
-            {
-              day: "Tue",
-              date: "Jul 8",
-              temp: 72,
-              condition: "partly-cloudy",
-              wind: 6,
-              precipitation: 15,
-              optimal: false,
-            },
-          ],
-          bestDay: "Friday, July 4",
-          bestTime: "10:00 AM",
-        };
-
-        // Set current weather
-        document.getElementById("currentTemp").textContent =
-          `${weatherData.current.temp}°F`;
-        document.getElementById("currentLocation").textContent =
-          weatherData.current.location;
-        document.getElementById("currentWind").textContent = weatherData.current.wind;
-        document.getElementById("currentHumidity").textContent =
-          weatherData.current.humidity;
-        document.getElementById("currentPrecip").textContent =
-          weatherData.current.precipitation;
-
-        // Set weather icon
-        const weatherIconMap = {
-          sunny: "ri-sun-line",
-          "partly-cloudy": "ri-sun-cloudy-line",
-          cloudy: "ri-cloudy-line",
-          rainy: "ri-rainy-line",
-          stormy: "ri-thunderstorms-line",
-        };
-
-        document.querySelector(".weather-icon i").className =
-          weatherIconMap[weatherData.current.condition];
-
-        // Generate forecast
-        const forecastContainer = document.getElementById("forecast");
-        forecastContainer.innerHTML = "";
-
-        weatherData.forecast.forEach((day) => {
-          const dayElement = document.createElement("div");
-          dayElement.className = `forecast-day ${day.optimal ? "optimal" : ""}`;
-
-          dayElement.innerHTML = `
-                          <div class="forecast-date">${day.day}, ${day.date}</div>
-                          <div class="forecast-icon">
-                              <i class="${weatherIconMap[day.condition]}"></i>
-                          </div>
-                          <div class="forecast-temp">${day.temp}°F</div>
-                          <div class="forecast-conditions">
-                              <span><i class="ri-windy-line" style="margin-right: 0.25rem;"></i>${day.wind} mph</span>
-                              <span style="margin-left: 0.5rem;"><i class="ri-drop-line" style="margin-right: 0.25rem;"></i>${day.precipitation}%</span>
-                          </div>
-                          ${day.optimal ? '<div style="color: var(--accent); font-weight: 600; margin-top: 0.5rem;">Ideal for Golf</div>' : ""}
-                      `;
-
-          forecastContainer.appendChild(dayElement);
-        });
-
-        // Set best day and time
-        document.getElementById("bestDay").textContent = weatherData.bestDay;
-        document.getElementById("bestTime").textContent = weatherData.bestTime;
-      });
-    </script>
-
-    <script id="carouselScript">
-      document.addEventListener("DOMContentLoaded", function () {
-        const carousel = document.getElementById("storiesCarousel");
-        const cards = carousel.querySelectorAll(".story-card");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-
-        let currentIndex = 0;
-        const cardCount = cards.length;
-
-        function updateCarousel() {
-          const translateValue = -currentIndex * 100 + "%";
-          carousel.style.transform = `translateX(${translateValue})`;
-        }
-
-        prevBtn.addEventListener("click", function () {
-          currentIndex = (currentIndex - 1 + cardCount) % cardCount;
-          updateCarousel();
-        });
-
-        nextBtn.addEventListener("click", function () {
-          currentIndex = (currentIndex + 1) % cardCount;
-          updateCarousel();
-        });
-
-        // Auto-rotate carousel
-        let carouselInterval = setInterval(function () {
-          currentIndex = (currentIndex + 1) % cardCount;
-          updateCarousel();
-        }, 8000);
-
-        // Pause auto-rotation when hovering over carousel
-        carousel.addEventListener("mouseenter", function () {
-          clearInterval(carouselInterval);
-        });
-
-        carousel.addEventListener("mouseleave", function () {
-          carouselInterval = setInterval(function () {
-            currentIndex = (currentIndex + 1) % cardCount;
-            updateCarousel();
-          }, 8000);
-        });
-      });
-    </script>
-
-    <script id="formScript">
-      document.addEventListener("DOMContentLoaded", function () {
-        const joinForm = document.getElementById("joinForm");
-
-        joinForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Normally would send data to server
-          alert("Thanks for joining! We'll be in touch soon.");
-          joinForm.reset();
-        });
-      });
-    </script>
 </body>
+<script id="mobileMenuSript">
+    document.addEventListener("DomContentLoaded" ,function ()
+{
+const mobileMenuBtn=
+document.getElementById("mobileMenu");
+const navMenu = document.getElementById("navMenu");
+
+mobile
+}
+)
+</script>
 </html>
