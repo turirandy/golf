@@ -22,4 +22,4 @@ GirlsGolf endeavours to:
 
 
 ## Why did I create this website
-I play
+I play golf myself,I play tournaments and when I look at the leaderboard and count the number of girls participating we are normally like 27 out of 115 which is so Sad 
