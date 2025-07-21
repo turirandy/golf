@@ -71,7 +71,7 @@
                     <div class="form-group">
                         <label for="shotAccuracy" class="form-label">Accuracy(1-10)</label>
                         <input type="range"id="shotAccuracy"class="form-input"min="1"max="10" step="1" value="5">
-                        <div id="accuracyValue" style="text-align: center;margin-top: 0.5rem;">5</div>    
+                        <div id="accuracyValue" style="text-align: center;margin-top: 0.5rem;"></div>    
                     </div>
                     <div class="form-group">
                         <label for="shotClub" class="form-label">Club Used</label>
@@ -127,7 +127,7 @@
             <div style="margin-top: 2rem;text-align: center;"></div>
             <h3 style="margin-bottom: 1rem;">Best Time to Golf This Week</h3>
             <div style="background-color:var(--accent);padding: 1rem;border-radius: 8px;display: inline-block;">
-                <p style="font-weight: 600;margin: 0;"><i class="ri-calender-check-line" style="margin-right: 0.5rem;"></i><span id="bestDay">Friday,July 5</span>at <span id="bestTime">10:00AM</span></p>
+                <p style="font-weight: 600;margin: 0;"><i class="ri-calender-check-line" style="margin-right: 0.5rem;"></i><span id="bestDay">Friday , July 25</span> at <span id="bestTime">10:00AM</span></p>
             </div>
         </div>
     </div>
@@ -304,7 +304,8 @@
                     <i class="ri-golf-line"></i>
                     <span>GirlsGolf</span>
                 </a>
-                <p>Empowering women and girls through the game of golf.Trck,improve,connect and inspire.</p>
+                <p>Empowering women and girls through the game of golf.</p>
+                <p>Track,improve,connect and inspire.</p>
                 <div class="footer-social">
                     <a href="#" class="social-link"><i class="ri-instagram-line"></i></a>
                     <a href="#" class="social-link"><i class="ri-facebook-line"></i></a>
@@ -350,15 +351,63 @@
         </div>
     </footer>
 </body>
-<script id="mobileMenuSript">
-    document.addEventListener("DomContentLoaded" ,function ()
-{
-const mobileMenuBtn=
-document.getElementById("mobileMenu");
-const navMenu = document.getElementById("navMenu");
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const shotForm = document.getElementById("shotForm");
 
-mobile
-}
-)
-</script>
-</html>
+    if (shotForm) {
+        shotForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // prevent default form submission
+
+            // Optional: simulate saving form data (you could do this with localStorage, API call, etc.)
+            const shotDate = document.getElementById("shotDate").value;
+            const shotDistance = document.getElementById("shotDistance").value;
+            const shotAccuracy = document.getElementById("shotAccuracy").value;
+            const shotClub = document.getElementById("shotClub").value;
+            const shotNotes = document.getElementById("shotNotes").value;
+
+            // Simulate delay and redirect
+            setTimeout(() => {
+                // Scroll or redirect to top (home)
+                window.location.hash = ""; // scrolls to top of the page
+                // Alternatively: window.location.href = "index.html";
+                alert("Shot data saved successfully!");
+                 shotForm.reset();
+            }, 500);
+        });
+    }
+});
+
+// Join form
+    const joinForm = document.getElementById("joinForm");
+    if (joinForm) {
+        joinForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // prevent default form submission
+            // Simulate save
+            setTimeout(() => {
+                // Scroll or redirect to top (home)
+                window.location.hash = "", // scrolls to top of page
+                // Alternatively: window.location.href ="index.html";
+                alert("Thanks for joining GirlsGolf!");
+                 joinForm.reset();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 500);
+        });
+    }  
+
+     // Newsletter form submission
+    const newsletterForm = document.querySelector(".newsletter-form");
+    if (newsletterForm) {
+        newsletterForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            setTimeout(() => {
+                 // Scroll or redirect to top (home)
+                window.location.hash = "", // scrolls to top of page
+                // Alternatively: window.location.href ="index.html";
+                alert("Thank you for subscribing to our newsletter!");
+                newsletterForm.reset();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 500);
+        })};
+ </script>
